@@ -1,0 +1,28 @@
+fail_fast: true
+default_language_version:
+    python: python3.9
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+    -   id: check-yaml
+        args: [--unsafe]
+    -   id: end-of-file-fixer
+    -   id: trailing-whitespace
+    -   id: check-json
+-   repo: https://github.com/psf/black
+    rev: 22.3.0
+    hooks:
+    -   id: black
+        language_version: python3.9
+        args: [--line-length=100]
+-   repo: https://github.com/PyCQA/isort
+    rev: 5.5.2
+    hooks:
+    -   id: isort
+        args: [--line-length=100, --multi-line=3, --trailing-comma]
+-   repo: https://github.com/asottile/pyupgrade
+    rev: v2.19.4
+    hooks:
+    -   id: pyupgrade
+        args: [--py38-plus]
